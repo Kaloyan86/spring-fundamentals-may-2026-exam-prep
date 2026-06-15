@@ -1,6 +1,6 @@
-package app.model.attraction;
+package app.model.entity.attraction;
 
-import app.model.trip.Trip;
+import app.model.entity.trip.Trip;
 import jakarta.persistence.*;
 import lombok.*;
 

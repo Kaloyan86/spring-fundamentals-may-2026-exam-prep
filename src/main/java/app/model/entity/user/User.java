@@ -1,4 +1,4 @@
-package app.model.user;
+package app.model.entity.user;
 
 import java.util.UUID;
 

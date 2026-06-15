@@ -1,13 +1,12 @@
-package app.model.booking;
+package app.model.entity.booking;
 
 import java.time.LocalDate;
 import java.util.UUID;
 
-import app.model.trip.Trip;
-import app.model.user.User;
+import app.model.entity.trip.Trip;
+import app.model.entity.user.User;
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.GenericGenerator;
 
 @Builder
 @Setter
