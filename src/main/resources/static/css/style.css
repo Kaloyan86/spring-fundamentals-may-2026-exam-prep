@@ -5,43 +5,249 @@
 }
 
 body{
-    font-family:'Segoe UI',sans-serif;
+    font-family:'Poppins', sans-serif;
     background:#f4f6fb;
+    line-height:1.6;
+    color:#333;
 }
 
+/* Container */
+.container{
+    max-width:1200px;
+    margin:0 auto;
+    padding:0 20px;
+}
+
+/* Navbar */
 nav{
     background:#1e3a8a;
     color:white;
-    padding:20px;
+    padding:20px 0;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+.nav-container{
     display:flex;
     justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:700;
+    color:white;
+    text-decoration:none;
+    letter-spacing:0.5px;
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:30px;
+    align-items:center;
 }
 
 nav a{
     color:white;
     text-decoration:none;
-    margin-left:20px;
+    font-weight:500;
+    transition:opacity 0.3s ease;
 }
 
+nav a:hover{
+    opacity:0.8;
+}
+
+/* Logout Button */
+.btn-logout{
+    background:transparent;
+    color:white;
+    border:2px solid white;
+    padding:10px 18px;
+    border-radius:6px;
+    font-weight:600;
+    cursor:pointer;
+    transition:all 0.3s ease;
+    font-family:'Poppins', sans-serif;
+    font-size:14px;
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.btn-logout:hover{
+    background:white;
+    color:#1e3a8a;
+    transform:translateY(-2px);
+    box-shadow:0 4px 8px rgba(0,0,0,0.2);
+}
+
+.btn-logout:active{
+    transform:translateY(0);
+}
+
+/* Hero Section */
 .hero{
     text-align:center;
     padding:100px 20px;
+    background:linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color:white;
 }
 
 .hero h1{
     font-size:60px;
+    font-weight:700;
+    margin-bottom:20px;
 }
 
-.btn{
+.hero p{
+    font-size:20px;
+    margin-bottom:30px;
+    opacity:0.95;
+}
+
+/* Buttons */
+.btn, .btn-primary{
     display:inline-block;
     background:#2563eb;
     color:white;
-    padding:12px 24px;
-    border-radius:10px;
+    padding:14px 32px;
+    border-radius:8px;
     text-decoration:none;
+    font-weight:600;
+    transition:all 0.3s ease;
+    border:none;
+    cursor:pointer;
 }
 
-.error{
-    color:red;
+.btn:hover, .btn-primary:hover{
+    background:#1d4ed8;
+    transform:translateY(-2px);
+    box-shadow:0 8px 16px rgba(37, 99, 235, 0.3);
+}
+
+/* Features Section */
+.features{
+    padding:80px 20px;
+    background:white;
+}
+
+.features .container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
+    gap:40px;
+}
+
+.feature-card{
+    text-align:center;
+    padding:40px 20px;
+    border-radius:12px;
+    background:#f8fafc;
+    transition:all 0.3s ease;
+}
+
+.feature-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 12px 24px rgba(0,0,0,0.1);
+}
+
+.feature-card i{
+    font-size:48px;
+    color:#667eea;
+    margin-bottom:20px;
     display:block;
+}
+
+.feature-card h3{
+    font-size:24px;
+    font-weight:600;
+    margin-bottom:15px;
+    color:#1e3a8a;
+}
+
+.feature-card p{
+    color:#666;
+    font-size:16px;
+}
+
+/* Footer */
+footer{
+    background:#1e3a8a;
+    color:white;
+    padding:60px 20px 20px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+    gap:40px;
+    margin-bottom:40px;
+}
+
+footer h3{
+    font-size:20px;
+    font-weight:600;
+    margin-bottom:20px;
+}
+
+footer p{
+    color:#e5e7eb;
+    margin-bottom:10px;
+    line-height:1.8;
+}
+
+footer ul{
+    list-style:none;
+}
+
+footer ul li{
+    margin-bottom:12px;
+}
+
+footer a{
+    color:#e5e7eb;
+    text-decoration:none;
+    transition:color 0.3s ease;
+}
+
+footer a:hover{
+    color:white;
+}
+
+footer hr{
+    border:none;
+    border-top:1px solid rgba(255,255,255,0.1);
+    margin:30px 0;
+}
+
+.copyright{
+    text-align:center;
+    color:#9ca3af;
+    font-size:14px;
+}
+
+/* Error Messages */
+.error{
+    color:#dc2626;
+    display:block;
+    margin-top:8px;
+    font-size:14px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero h1{
+        font-size:36px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .nav-links{
+        gap:15px;
+        flex-direction:column;
+        align-items:flex-start;
+    }
 }
