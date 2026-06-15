@@ -1,6 +1,7 @@
 package app.mapper.user;
 
 import app.model.dto.user.UserDto;
+import app.model.dto.user.UserRegisterRequest;
 import app.model.entity.user.User;
 import lombok.NoArgsConstructor;
 
@@ -23,21 +24,18 @@ public class UserMapper {
 //                .build();
 //    }
 
-//    public static User toUserEntity(UserRegisterRequest userRegisterRequest) {
-//        if (userRegisterRequest == null) {
-//            return null;
-//        }
-//
-//        return User.builder()
-//                .username(userRegisterRequest.getUsername())
-//                .password(userRegisterRequest.getPassword())
-//                .country(userRegisterRequest.getCountry())
-//                .role(UserRole.USER)
-//                .isActive(true)
-//                .createdOn(LocalDateTime.now())
-//                .updatedOn(LocalDateTime.now())
-//                .build();
-//    }
+    public static User toUserEntity(UserRegisterRequest userRegisterRequest) {
+        if (userRegisterRequest == null) {
+            return null;
+        }
+
+        return User.builder()
+                .username(userRegisterRequest.getUsername())
+                .password(userRegisterRequest.getPassword())
+                .email(userRegisterRequest.getEmail())
+                .role(userRegisterRequest.getUserRole())
+                .build();
+    }
 
     public static UserDto toUserDto(User user) {
         if (user == null) {

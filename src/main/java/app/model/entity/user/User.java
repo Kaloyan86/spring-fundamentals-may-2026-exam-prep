@@ -2,6 +2,7 @@ package app.model.entity.user;
 
 import java.util.UUID;
 
+import app.model.dto.user.UserRole;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
@@ -29,7 +30,8 @@ public class User {
     private String password;
 
     @Column(nullable = false)
-    private String role;
+    @Enumerated(EnumType.STRING)
+    private UserRole role;
 
 }
 
