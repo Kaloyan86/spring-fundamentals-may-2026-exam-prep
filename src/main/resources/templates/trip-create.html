@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragments/head :: head('Create Trip')}"></head>
+
+<body>
+
+<header th:replace="~{fragments/navbar :: navbar}"></header>
+
+<section class="form-section">
+
+    <div class="form-card large">
+
+        <h2>Create New Trip</h2>
+
+        <form th:action="@{/trips/create}"
+              method="post">
+
+            <div class="form-group">
+                <label>Destination</label>
+                <input type="text" name="destination">
+                <small class="error"
+                       th:errors="*{destination}"></small>
+            </div>
+
+            <div class="form-group">
+                <label>Description</label>
+                <textarea rows="6"
+                          name="description"></textarea>
+            </div>
+
+            <div class="form-row">
+
+                <div class="form-group">
+                    <label>Start Date</label>
+                    <input type="date"
+                           name="startDate">
+                </div>
+
+                <div class="form-group">
+                    <label>End Date</label>
+                    <input type="date"
+                           name="endDate">
+                </div>
+
+            </div>
+
+            <button class="btn-primary">
+
+                Create Trip
+
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+<footer th:replace="~{fragments/footer :: footer}"></footer>
+
+</body>
+
+</html>
