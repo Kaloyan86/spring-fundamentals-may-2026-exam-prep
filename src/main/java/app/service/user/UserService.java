@@ -7,13 +7,16 @@ import app.model.dto.user.UserRegisterRequest;
 import app.model.dto.user.UserRole;
 import app.model.entity.user.User;
 import app.repository.user.UserRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Service
+@Transactional
 public class UserService {
 
     private final UserRepository userRepository;
@@ -61,6 +64,12 @@ public class UserService {
 
     public List<UserDto> getAllUsers() {
         return userRepository.findAll().stream().map(UserMapper::toUserDto).toList();
+    }
+
+    public UserDto getUserById(UUID id) {
+        return userRepository.findById(id)
+                .map(UserMapper::toUserDto)
+                .orElseThrow(() -> new RuntimeException("User not found"));
     }
 
 }

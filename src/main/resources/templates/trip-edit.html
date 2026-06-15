@@ -15,6 +15,7 @@
         <h2>Edit Trip</h2>
 
         <form th:action="@{/trips/{id}/edit(id=${trip.id})}"
+              th:object="${trip}"
               method="post">
 
             <div class="form-group">
@@ -22,8 +23,7 @@
                 <label>Destination</label>
 
                 <input type="text"
-                       name="destination"
-                       th:value="${trip.destination}">
+                       th:field="*{destination}">
 
                 <small class="error"
                        th:errors="*{destination}">
@@ -36,8 +36,7 @@
                 <label>Description</label>
 
                 <textarea rows="6"
-                          name="description"
-                          th:text="${trip.description}">
+                          th:field="*{description}">
                 </textarea>
 
                 <small class="error"
@@ -53,8 +52,11 @@
                     <label>Start Date</label>
 
                     <input type="date"
-                           name="startDate"
-                           th:value="${trip.startDate}">
+                           th:field="*{startDate}">
+
+                    <small class="error"
+                           th:errors="*{startDate}">
+                    </small>
 
                 </div>
 
@@ -63,8 +65,11 @@
                     <label>End Date</label>
 
                     <input type="date"
-                           name="endDate"
-                           th:value="${trip.endDate}">
+                           th:field="*{endDate}">
+
+                    <small class="error"
+                           th:errors="*{endDate}">
+                    </small>
 
                 </div>
 

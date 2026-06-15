@@ -15,11 +15,12 @@
         <h2>Create New Trip</h2>
 
         <form th:action="@{/trips/create}"
+              th:object="${tripRequest}"
               method="post">
 
             <div class="form-group">
                 <label>Destination</label>
-                <input type="text" name="destination">
+                <input type="text" th:field="*{destination}">
                 <small class="error"
                        th:errors="*{destination}"></small>
             </div>
@@ -27,7 +28,9 @@
             <div class="form-group">
                 <label>Description</label>
                 <textarea rows="6"
-                          name="description"></textarea>
+                          th:field="*{description}"></textarea>
+                <small class="error"
+                       th:errors="*{description}"></small>
             </div>
 
             <div class="form-row">
@@ -35,13 +38,17 @@
                 <div class="form-group">
                     <label>Start Date</label>
                     <input type="date"
-                           name="startDate">
+                           th:field="*{startDate}">
+                    <small class="error"
+                           th:errors="*{startDate}"></small>
                 </div>
 
                 <div class="form-group">
                     <label>End Date</label>
                     <input type="date"
-                           name="endDate">
+                           th:field="*{endDate}">
+                    <small class="error"
+                           th:errors="*{endDate}"></small>
                 </div>
 
             </div>
