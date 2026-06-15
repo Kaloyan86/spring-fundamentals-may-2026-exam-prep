@@ -1,7 +1,5 @@
 package app.security;
 
-import app.model.dto.user.UserDto;
-import app.service.user.UserService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
